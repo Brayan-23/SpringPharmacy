@@ -3,6 +3,7 @@ package com.generation.pharmacy.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "product")
@@ -20,7 +21,7 @@ public class Product {
 
   @NotBlank(message = "The manufacturer attribute is mandatory!")
   private String manufacturer;
-  @NotBlank(message = "The value attribute is mandatory!")
+  @NotNull(message = "The value attribute is mandatory!")
   private Float value;
 
   @ManyToOne
